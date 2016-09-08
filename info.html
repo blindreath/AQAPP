@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Informacion</title>
+	<link href="css/bootstrap.css" rel="stylesheet">
+
+	
+  </head>
+  <body align="left" style="padding:0px 5px;">
+	<h4> Dános más detalles:</h4>
+    <form align="left">   
+    <h6>Prioridad:
+      <select id="op" >
+      <option> Selecciona </option>
+          <option value="1"  onClick="prib()" >Baja</option>
+          <option value="2"  onClick="prim()" >Media</option>
+          <option value="3" onClick="pria()"  >Alta</option>
+        </select>
+      </h6>
+      <h6>Descripción:<p style="border:2;"><label id="desc"> </label></p> </h6>
+	<h5> Asignación:<br> <label id="asig"> NE </label></h5>
+    <h5> Asistencia remota:<br> <label id="asis"> NE </label></h5>
+    <hr>
+    <h5> Asistencia en sitio en la CDMX:<br> <label id="asisdf"> NE </label></h5>
+    <hr>
+    <h5>Modelo de equipo:  
+    <select>
+    <option>Modelo 1. </option>
+    <option>Modelo 2. </option>
+    <option>Modelo 3. </option>
+    </select></h5>
+	<input type="button" value="Enviar">
+    </form>
+        
+    
+    <script>
+	
+	var baja="Falla menor del servicio, sin consecuencia significativa sobre la actividad del cliente. ";
+	var media="Falla parcial del servicio, la cual no afecta procesos clave del cliente ni genera un riesgo alto de seguridad de su red, o existe una solución temporal. ";
+	var alta="Falla del servicio por lo cual quedan inhabilitados procesos claves del cliente o existe un riesgo alto de seguridad para la red del cliente, sin que exista una solución temporal. ";
+	
+	document.getElementById('asig').innerHTML = 'No especificado';
+	var op=document.getElementById('op').value;
+	
+	function prib(){
+		document.getElementById('desc').innerHTML = baja;
+		document.getElementById('asig').innerHTML = "4 horas.";
+		document.getElementById('asis').innerHTML = "1 día. ";
+		document.getElementById('asisdf').innerHTML = "1 a 2 días. ";
+		
+	}
+	
+	function prim(){
+		document.getElementById('desc').innerHTML=media;
+		document.getElementById('asig').innerHTML = "1 hora. ";
+		document.getElementById('asis').innerHTML = "2 horas. ";
+		document.getElementById('asisdf').innerHTML = "5 horas. ";
+	}
+	function pria(){
+		document.getElementById('desc').innerHTML=alta;
+		document.getElementById('asig').innerHTML = "Inmediata.";
+		document.getElementById('asis').innerHTML = "30 minutos. ";
+		document.getElementById('asisdf').innerHTML = "3 horas. ";
+	}
+	
+	
+	 </script>
+	<script src="js/jquery-1.11.2.min.js"></script>
+
+ 
+	<script src="js/bootstrap.js"></script>
+  </body>
+</html>
